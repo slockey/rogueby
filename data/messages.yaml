@@ -3,4 +3,18 @@
 title:
   name: RogueBy, a nethack clone
   by: by some dev
+  tutorial: Optionally, press t for the tutorial
   pick_random: Shall I pick a character race, role, gender and alignment for you? [ynq]
+
+quit:
+  title: Quit Game
+  prompt: Would you like to quit the game? [yn]
+
+tutorial:
+  next_or_quit: Next or quit [nq]
+  page1: Welcome to RogueBy a roguelike implemented in Ruby with Curses for fun an learning.
+  page2: Move your character around the map with the arrow keys (up. down, left, right). Sorry, no diagonal movement.
+
+creation:
+  title: Character Creation
+  text: Some text to fill in for the character creation screen

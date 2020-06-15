@@ -11,6 +11,10 @@ class UI
     close_screen
   end
 
+  def clear
+    super
+  end
+
   def message(y, x, string)
     setpos(y, x)    # place the cursor at the position
     addstr(string)  # prints msg at cursor location

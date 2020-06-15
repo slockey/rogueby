@@ -10,6 +10,10 @@ require "yaml"
 require "ui"
 require "game"
 require "title_screen"
+require "quit_screen"
+require "creation_screen"
+require "tutorial_screen"
+
 require "data_loader"
 require "messages"
 
