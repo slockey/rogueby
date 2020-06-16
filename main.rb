@@ -9,13 +9,13 @@ require "yaml"
 # local includes
 require "ui"
 require "game"
-require "title_screen"
-require "quit_screen"
-require "creation_screen"
-require "tutorial_screen"
-
 require "data_loader"
 require "messages"
+
+require "screens/title_screen"
+require "screens/quit_screen"
+require "screens/creation_screen"
+require "screens/tutorial_screen"
 
 # start the game
 Game.new.run
