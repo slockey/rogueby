@@ -19,12 +19,12 @@ class CreationScreen
   attr_reader :ui, :options, :messages
 
   def prompt
-    ui.choice_prompt(3, 0, messages[:text], "q")
+    ui.choice_prompt(3, 0, messages[:text], [KEYS::LOWER_Q])
   end
 
   def handle_choice(choice)
     case choice
-      when "q" then
+      when KEYS::LOWER_Q then
         @game.set_screen(QuitScreen)
     end
   end

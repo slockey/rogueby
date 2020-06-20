@@ -1,6 +1,8 @@
 
 class TitleScreen
 
+  KEYS_TITLE = [KEYS::LOWER_P, KEYS::LOWER_T, KEYS::LOWER_Y, KEYS::LOWER_N, KEYS::LOWER_Q]
+
   def initialize(game, ui, options)
     @game = game
     @ui = ui
@@ -21,19 +23,21 @@ class TitleScreen
   attr_reader :ui, :options, :messages
 
   def prompt
-    ui.choice_prompt(3, 0, messages[:pick_random], "tynq")
+    ui.choice_prompt(3, 0, messages[:pick_random], KEYS_TITLE)
   end
 
   def handle_choice(choice)
     case choice
-      when "q" then
+      when KEYS::LOWER_Q then
         @game.set_screen(QuitScreen)
-      when "n" then
+      when KEYS::LOWER_N then
         @game.set_screen(CreationScreen)
-      when "y" then 
+      when KEYS::LOWER_Y then 
         options[:randall] = true
-      when "t" then
+      when KEYS::LOWER_T then
         @game.set_screen(TutorialScreen)
+      when KEYS::LOWER_P then
+        @game.set_screen(GameScreen)
     end
   end
 

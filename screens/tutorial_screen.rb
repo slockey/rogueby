@@ -19,14 +19,15 @@ class TutorialScreen
   attr_reader :ui, :options, :messages
 
   def prompt
-    ui.choice_prompt(3, 0, messages[:next_or_quit], "nq")
+    ui.choice_prompt(3, 0, messages[:next_or_quit], [KEYS::LOWER_N, KEYS::LOWER_Q])
   end
 
   def handle_choice(choice)
     case choice
-    when "n" then
+    when KEYS::LOWER_N then
+      # TODO: implement a better paging for messages
       render(:page2)
-    when "q" then
+    when KEYS::LOWER_Q then
       @game.set_screen(QuitScreen)
     end
   end

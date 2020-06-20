@@ -25,8 +25,13 @@ class UI
     
     loop do
       choice = getch
-      return choice if choices.include?(choice)
+      if !choice.nil? && choices.include?(choice)
+        return choice
+      end
     end
   end
 
+  def get_key
+    return getch
+  end
 end

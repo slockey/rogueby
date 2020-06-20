@@ -1,11 +1,11 @@
 
-class QuitScreen
+class GameScreen
 
   def initialize(game, ui, options)
     @game = game
     @ui = ui
     @options = options
-    @messages = Messages[:quit]
+    @messages = Messages[:game]
   end
 
   def render
@@ -19,14 +19,15 @@ class QuitScreen
   attr_reader :ui, :options, :messages
 
   def prompt
-    ui.choice_prompt(3, 0, messages[:prompt], [KEYS::LOWER_Y,KEYS::LOWER_N])
+    ui.choice_prompt(3, 0, "Press something [q,ESC]", [KEYS::LOWER_Q,KEYS::ESCAPE])
   end
 
   def handle_choice(choice)
     case choice
-      when KEYS::LOWER_Y then
-        options[:quit] = true
-      # TODO: implement N
+      when KEYS::LOWER_Q then
+        @game.set_screen(QuitScreen)
+      when KEYS::ESCAPE
+        @game.set_screen(TitleScreen)
     end
   end
 
