@@ -5,6 +5,7 @@ class KEYS
   ENUM = [
     LOWER_A = 'a',
     LOWER_D = 'd',
+    LOWER_E = 'e',
     LOWER_N = 'n',
     LOWER_P = 'p',
     LOWER_Q = 'q',

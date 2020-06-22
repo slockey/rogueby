@@ -8,6 +8,8 @@ require "yaml"
 
 # local includes
 require "ui"
+require "menu"
+
 require "game"
 require "data_loader"
 require "messages"

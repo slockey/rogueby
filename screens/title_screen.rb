@@ -3,6 +3,9 @@ class TitleScreen
 
   KEYS_TITLE = [KEYS::LOWER_P, KEYS::LOWER_T, KEYS::LOWER_Y, KEYS::LOWER_N, KEYS::LOWER_Q]
 
+  MENU_TEXT   = ["Play", "Tutorial", "Quit"]
+  MENU_VALUES = [KEYS::LOWER_P, KEYS::LOWER_T, KEYS::LOWER_Q]
+
   def initialize(game, ui, options)
     @game = game
     @ui = ui
@@ -15,7 +18,8 @@ class TitleScreen
     ui.message(0, 0, messages[:name])
     ui.message(1, 7, messages[:by])
     ui.message(4, 0, messages[:tutorial])
-    handle_choice prompt
+#    handle_choice prompt
+    handle_choice Menu.start(@ui, MENU_TEXT, MENU_VALUES, 5, 5)
   end
 
   private
